@@ -1,0 +1,60 @@
+/**
+ * Напишите програма, която отпечатва текстът на любимата ви песен, като използвате метод
+ * за повтарящите се куплети.
+ */
+
+public class task_1 {
+    public static void main(String[] args) {
+        //String refrain = " ";
+        String song1 = "1. Весь день сегодня плакала плакала Ты\n" +
+                "Худи промокло в груди\n" +
+                "Под капюшоном не скрыть - сложно\n" +
+                "Уходить - не уходить\n" +
+                "Я вызываю такси\n" +
+                "Долго чувствовали мы – кожно";
+        String song2 = "2. Мы целовались с тобою неосторожно\n" +
+                "Я переименовал тебя в \"Это в прошлом\"\n" +
+                "Будь чуть ближе но в последний раз если сможешь\n" +
+                "Правду говорят глаза";
+        String song3 = "3. Плакала плакала Ты\n" +
+                "Худи промокло в груди\n" +
+                "Под капюшоном не скрыть - сложно\n" +
+                "Уходить - не уходить. Уходи\n" +
+                "Долго чувствовали мы – кожно";
+        String song4 = "4. Подойди ко мне в полной темноте\n" +
+                "Все равно глаза им не спрятаться\n" +
+                "Давай беги беги отсюда скорей\n" +
+                "Runaway baby";
+        System.out.println(song1);
+        System.out.println();
+        System.out.println(song2);
+        System.out.println();
+        refrain();
+        System.out.println();
+        refrain();
+        refrain2();
+        System.out.println();
+        System.out.println(song3);
+        System.out.println();
+        System.out.println(song4);
+        System.out.println();
+        refrain();
+        System.out.println();
+        refrain();
+        refrain2();
+
+    }
+
+    static void  refrain () {
+        System.out.println("Ты просто...\n" +
+                "Подойди подойди ко мне поближе\n" +
+                "Че ты палишь палишь глаза бесстыжие\n" +
+                "Давай беги беги отсюда скорей\n" +
+                "Runaway baby");
+
+    }
+
+    static void refrain2 (){
+        System.out.println("Runaway");
+    }
+}
