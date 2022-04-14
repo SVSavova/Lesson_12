@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+/**
+ * Да се напише програма с методи, които извеждат лицето на правоъгълник, триъгълник и кръг.
+ * Потребителят трябва първо да въведете фигурата, след това параметрите.
+ * Лице на кръг: S = PI * r.pow(радиус);
+ * лице на правоъгълник: S = a * b;
+ * лицето на триъгълник S = (A * B)/2 - за правоъгълен триъгълник)
+ */
+
+
+public class task_3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double p = 3.14;
+        System.out.println("""
+                Лицето на коя фигура ще изчисляваме?\s
+                 За триъгълник, моля изберете 1.\s
+                 За правоъгълник, моля изберете 2.\s
+                 За кръг, моля изберете 3\s""");
+        int figure = scanner.nextInt();
+        if (figure == 1){
+            System.out.println("Моля въведете страна А: ");
+            int a = scanner.nextInt();
+            System.out.println("Моля въведете страна Б: ");
+            int b = scanner.nextInt();
+                System.out.println("Лицето на триъгълника е: " + calculateAreaTriangle(a,b) + " cm");
+
+        }else if(figure == 2){
+            System.out.println("Моля въведете страна А: ");
+            int a = scanner.nextInt();
+            System.out.println("Моля въведете страна Б: ");
+            int b = scanner.nextInt();
+            System.out.println("Лицето на правоъгълника е: " + calculateAreaRectangle(a,b)+ " cm");
+
+        } else if (figure == 3) {
+            System.out.println("Моля въведете радуиса: ");
+            int r = scanner.nextInt();
+            System.out.println("Лицето на кръга е: " + calculateAreaCircle(r,p) + " cm");
+        }
+
+    }
+    static int calculateAreaTriangle(int a, int b){
+        return (a * b)/2;
+    }
+    static int calculateAreaRectangle(int a, int b){
+        return (a * b);
+    }
+    static double calculateAreaCircle(int r, double p ){
+        return (p * (Math.pow(r,2)));
+    }
+}
