@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class task_2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter text: ");
+        String text = scanner.nextLine();
+        chars(text);
+    }
+
+    static void chars(String text) {
+
+        int middleCharOne = text.length() / 2;
+        if (text.length() % 2 != 0) {
+            System.out.println("The middle char is: " + text.charAt(middleCharOne));
+        } else {
+            int middleCharsTwo = text.length() / 2 - 1;
+            System.out.println("The middle chars are: " + text.charAt(middleCharsTwo) + ", " + text.charAt(middleCharOne));
+        }
+    }
+}
