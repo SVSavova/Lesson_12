@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class task_5 {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Въведи парола: ");
+            String password = scanner.next();
+            boolean validPassword = isValidPassword(password);
+            if (validPassword) {
+                break;
+            }
+            System.out.println("\t Паролата " + password + " e грешна!");
+        }
+        System.out.println("Паролата е вярна!");
+    }
+    public static boolean isValidPassword(String password) {
+        boolean isValid = true;
+        if (password.length() > 16 || password.length() < 8) {
+            System.out.println("Паролата трябва да е с дължина между от 8 до 16 знака.");
+            isValid = false;
+
+        }
+        String upperCaseChars = "(.*[A-Z].*)";
+        if (!password.matches(upperCaseChars)) {
+            System.out.println("Паролата трябва да съдържа поне една главна буква");
+            isValid = false;
+
+        }
+        String lowerCaseChars = "(.*[a-z].*)";
+        if (!password.matches(lowerCaseChars)) {
+            System.out.println("Паролата трябва да съдържа поне една малка буква.");
+            isValid = false;
+
+        }
+        String numbers = "(.*[0-9].*)";
+        if (!password.matches(numbers)) {
+            System.out.println("Паролата трябва да съдържа поне една цифра.");
+            isValid = false;
+
+        }
+        String specialChars = "(.*[&,^,=,+,_,-,@,#,$,%].*$)";
+        if (!password.matches(specialChars)) {
+            System.out.println("Паролата трябва да съдържа поне едни специален символ (&,^,=,+,_,-,@,#,$,%)");
+            isValid = false;
+        }
+        return isValid;
+    }
+}
